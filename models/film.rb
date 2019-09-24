@@ -7,7 +7,7 @@ require_relative("../db/sql_runner")
     def initialize(options)
       @id = options['id'].to_i if options['id']
       @title = options['title']
-      @price = options['price']
+      @price = options['price'].to_i
     end
 
 
@@ -71,6 +71,19 @@ require_relative("../db/sql_runner")
       customer_data = SqlRunner.run(sql, values)
       return customer_data.count
    end
+
+ # keith did below method
+   def self.find_by_id(id)
+     sql = "SELECT * FROM films
+     WHERE id = $1"
+     values = [ id ]
+     film = SqlRunner.run( sql, values ).first
+     return  Film.new(film)
+   end
+
+
+
+
 
 
   end

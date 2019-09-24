@@ -121,8 +121,8 @@ require('pry')
 
 
   ticket1 = Ticket.new({'customer_id' => customer5.id, 'film_id' => film3.id})
-  ticket2 = Ticket.new({'customer_id' => customer3.id, 'film_id' => film4.id})
-  ticket3 = Ticket.new({'customer_id' => customer3.id, 'film_id' => film4.id})
+  ticket2 = Ticket.new({'customer_id' => customer2.id, 'film_id' => film4.id})
+  ticket3 = Ticket.new({'customer_id' => customer2.id, 'film_id' => film5.id})
 
   ticket1.save
   ticket2.save
@@ -145,9 +145,10 @@ require('pry')
   # customer2_films = customer2.films
 
   # film4_customers = film4.customers
-  # all_films = Film.all
+  all_films = Film.all
 
-  # remaining_funds = customer2.buy_ticket(film3)
+  # customer2.buy_ticket(film3)
+  # p customer2.funds
   # ticket_count = customer2.tickets_count
   # film_count = film4.customer_count
 
